@@ -52,6 +52,11 @@ class Login : AppCompatActivity() {
             else {
                 tvMessage.text = "Xác thực thành công!"
                 tvMessage.setTextColor(android.graphics.Color.GREEN)
+
+                val email = etEmail.text.toString().trim()
+                val intent = android.content.Intent(this, Profile::class.java).apply {
+                    putExtra("USER_EMAIL", email)}
+                startActivity(intent)
             }
         }
     }
